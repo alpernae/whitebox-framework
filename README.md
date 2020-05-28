@@ -1,6 +1,7 @@
 # WhiteBox-FrameWork ![](images/icon.png) 
 
-WhiteBox-FrameWork is basic pentesting tool for now inside have three module.
+Whitebox-framework is basic pentesting tool for now have inside three module.
+
 
 
 ![](images/1.png)
