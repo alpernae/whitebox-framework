@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import importlib
 import time
 import requests
@@ -33,7 +31,7 @@ while WhiteBox:
     shm   = "show modules"  # For Modules Command
     st    = "set target"    # Set the target 
     showT = "show target"   # Show the target
-    exp   = "exploit"       # Exploit the victim
+    exp   = "run"           # Start the module 
     
     # Modules
     chekhost = "use check_host"
@@ -50,6 +48,7 @@ while WhiteBox:
         print("\nhelp         # Help Menu")
         print("install      # Set-Up The Tool")
         print("clear        # Clean The Terminal")
+        print("show modules # Show the exist modules")
         print("exit         # Exit The Tool")
         print("about        # About of author")
     
@@ -58,14 +57,9 @@ while WhiteBox:
         print("\nuse          # for selecet module")
         print("back         # Back to whitebox command line")
         print("set target   # Open settings for target")
+        print("show target  # Show selected target")
         print("run          # Run for seceted module")
         print("commands     # Commands for which module seleceted")
-        
-        print("\n# Modules")
-        print("------------------------------------------")
-        print("\ncheck_host  # Host Checking for Up or Down!")
-        print("smb_scanner # Scan For SMB")
-        print("dns_scanner # Scan For sublists")
     
 
     elif wbterm == get:
@@ -83,6 +77,13 @@ while WhiteBox:
         print("# Project Github : https://github.com/Alperenae/whitebox-framework")
         print("# Other Projects : https://github.com/Alperenae" + ENDC)
     
+    elif wbterm == shm:
+        print("\n# Modules")
+        print("------------------------------------------")
+        print("\ncheck_host  # Host Checking for Up or Down!")
+        print("smb_scanner # Scan For SMB")
+        print("dns_scanner # Scan For sublists")
+
     elif wbterm == clean:
         os.system("clear")
     
@@ -95,11 +96,13 @@ while WhiteBox:
         while chekhost:
             ch = input("\nWhiteBox:~#" + FAIL + "(check_host) > " + ENDC )
             
-            if ch == "set target":
+            if ch == st:
                 targ = input("Check Host: ") # Get Host And Check Host for it is up!
             
-            elif ch == "show target":
+            elif ch == showT :
                 print(OKGREEN + "\nTarget: " + ENDC + targ)
+                if targ == "":
+                    print("Please set a target!")
 
             elif ch == "run":
                 host = requests.get(targ)
@@ -122,7 +125,7 @@ while WhiteBox:
             elif ch == "back": # Back to whitebox term
                 break
 
-            elif ch == "clear":
+            elif ch == clean:
                 os.system("clear")
 
             elif ch == "exit":
