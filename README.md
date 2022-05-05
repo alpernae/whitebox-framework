@@ -57,5 +57,4 @@ Whitebox-framework is basic pentesting tool for now have inside three module.
 # For Feedback!
 
 + alperen.ergel@yandex.com
-+ alpern_ae @twitter
-+ alperen_ae @instagram
++ alpernae (IG/TW)
